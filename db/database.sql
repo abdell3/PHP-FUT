@@ -9,7 +9,11 @@ CREATE TABLE Club(
 INSERT INTO Club (nom, logo) VALUES
 ('Inter Miami', 'https://cdn.sofifa.net/meta/team/239235/120.png'),
 ('Al Nassr', 'https://cdn.sofifa.net/meta/team/2506/120.png'),
-('Manchester City', 'https://cdn.sofifa.net/players/239/085/25_120.png',);
+('Manchester City', 'https://cdn.sofifa.net/players/239/085/25_120.png'),
+('Atletico Madrid', 'https://cdn.sofifa.net/meta/team/7980/120.png'),
+('Al-Hilal', 'https://cdn.sofifa.net/meta/team/7011/120.png'),
+('Paris Saint-Germain', 'https://cdn.sofifa.net/meta/team/591/120.png');
+
 
 CREATE TABLE Nationality(
    id_natio INT AUTO_INCREMENT,
@@ -19,7 +23,10 @@ CREATE TABLE Nationality(
 INSERT INTO Nationality (nom, continent) VALUES
 ('Argentina','Amerique-sud'),
 ('Portugal', 'Europ'),
-('Belgium', 'Europ');
+('Belgium', 'Europ'),
+('Slovenia', 'Europ'),
+('Morocco', 'Afrique'),
+('Italy', 'Europ');
 
 -- CREATE TABLE Normal_player(
 --    id_normal INT AUTO_INCREMENT,,
@@ -48,7 +55,7 @@ INSERT INTO Nationality (nom, continent) VALUES
 -- ('GK');
 
 CREATE TABLE StatiqG(
-   id_statG INT AUTO_INCREMENT,,
+   id_statG INT AUTO_INCREMENT,
    rating INT,
    diving INT, 
    handling INT, 
