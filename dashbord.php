@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<?php
-include('../connexion.php');
-?>
 <html lang="en">
+
+<?php
+include('./connexion');
+?>
+
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="../src/output.css" rel="stylesheet">
+    <link href="./assets/css/output.css" rel="stylesheet">
 
 </head>
 
@@ -32,7 +34,7 @@ include('../connexion.php');
             </ul>
 
             <div class="mt-6">
-                <h6 class="text-blue-600 text-sm font-bold px-4">CRUD</h6>
+                <h6 class="text-blue-600 text-sm font-bold px-4"></h6>
                 <ul class="mt-3">
                     <li>
                         <a href="#"
@@ -59,7 +61,7 @@ include('../connexion.php');
                         </a>
                     </li>
                     <li>
-                        <a href="../Nationalite/Nationalite.php"
+                        <a href=""
                             class="text-black hover:text-blue-600 text-sm flex items-center hover:bg-blue-50 rounded px-4 py-3 transition-all">
                             <svg fill="#000000" width="30px" height="50px" viewBox="0 0 36 36" version="1.1" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <title>flag-solid</title>
@@ -71,7 +73,7 @@ include('../connexion.php');
                         </a>
                     </li>
                     <li>
-                        <a href="../Equipe/Equipe.php"
+                        <a href=""
                             class="text-black hover:text-blue-600 text-sm flex items-center hover:bg-blue-50 rounded px-4 py-3 transition-all">
                             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                 width="30px" height="50px" viewBox="0 0 961.945 961.945" style="enable-background:new 0 0 961.945 961.945;"
@@ -101,29 +103,11 @@ include('../connexion.php');
                 </ul>
             </div>
 
-            <!-- <div class="mt-6">
-                <h6 class="text-blue-600 text-sm font-bold px-4">Income</h6>
-                <ul class="mt-3">
-                    <li>
-                        <a href="#" 
-                            class="text-black hover:text-blue-600 text-sm flex items-center hover:bg-blue-50 rounded px-4 py-3 transition-all">
-                            <span>Earnings and Taxes</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" 
-                            class="text-black hover:text-blue-600 text-sm flex items-center hover:bg-blue-50 rounded px-4 py-3 transition-all">
-                            <span>Refunds</span>
-                        </a>
-                    </li>
-                </ul>
-            </div> -->
-
             <div class="mt-6">
-                <h6 class="text-blue-600 text-sm font-bold px-4">Actions</h6>
+                <h6 class="text-blue-600 text-sm font-bold px-4"></h6>
                 <ul class="mt-3">
                     <li>
-                        <a href="#"
+                        <a href=""
                             class="text-black hover:text-blue-600 text-sm flex items-center hover:bg-blue-50 rounded px-4 py-3 transition-all">
                             <svg width="30px" height="50px" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg" fill="none">
@@ -144,15 +128,14 @@ include('../connexion.php');
                 <div class="font-sans p-4">
                     <ul class="flex bg-gray-100">
                         <li id=""
-                            class="text-white font-bold  w-full text-center bg-purple-500 py-3 px-6 cursor-pointer">
-                            <!-- <input type="hidden" name="Gkid"> -->
+                            class="text-white font-bold  w-full text-center bg-orange-500 py-3 px-6 cursor-pointer">
+                            
                             All Players
                         </li>
 
-                        <li id=""
-                            class="text-gray-600 font-bold  w-full text-center bg-gray-200	 py-3 px-6 cursor-pointer">
+                        <li id="" class="text-gray-600 font-bold  w-full text-center bg-gray-200	 py-3 px-6 cursor-pointer">
 
-                            <a href="../CrudJoueurs/Ajouter.php"> Ajouter</a>
+                            <a href=""> Ajouter</a>
 
                         </li>
                         <!-- <li id=""
@@ -174,7 +157,7 @@ include('../connexion.php');
 
             <?php
 
-            include('../connexion.php');
+            
 
             $query = "SELECT Players.position_player,Players.name AS playerName,Nationalities.flag AS Flag,Players.photo AS PlayerPic,Rating,Clubs.logo AS logo, pace
 shooting,
@@ -182,7 +165,8 @@ passing,
 pace,
 dribbling,
 defending,
-physical FROM Players INNER JOIN Nationalities ON Nationalities.id=Players.id INNER JOIN Clubs ON Clubs.id=Players.id INNER JOIN Details_players ON Details_players.id =Players.id  
+physical
+ FROM Players INNER JOIN Nationalities ON Nationalities.id=Players.id INNER JOIN Clubs ON Clubs.id=Players.id INNER JOIN Details_players ON Details_players.id =Players.id  
 WHERE Players.position_player <> 'GK';";
 
             $resultat = mysqli_query($conn, $query);
@@ -448,3 +432,24 @@ WHERE Players.position_player <> 'GK';";
 </body>
 
 </html>
+
+
+<!-- <?php
+// try {
+//     $connect = mysqli_connect(
+//         'db', // Hostname (Docker service name)
+//         'myphp', // Username
+//         'mypassword', // Password
+//         'futgestion' // Database name
+//     );
+    
+//     $table_name = "user";
+    
+//     $query = "SELECT * FROM $table_name";
+//     $response = mysqli_query($connect, $query);
+    
+// } 
+// catch(Exception $e) {
+//     echo "Error: " . $e->getMessage();
+// }
+?> -->
