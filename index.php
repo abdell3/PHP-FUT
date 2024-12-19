@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+
+<?php
+include('./connexion.php');
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -279,22 +284,22 @@
 </html>
 
 
-<?php
-try {
-    $connect = mysqli_connect(
-        'db', // Hostname (Docker service name)
-        'myphp', // Username
-        'mypassword', // Password
-        'futgestion' // Database name
-    );
+<!-- <?php
+// try {
+//     $connect = mysqli_connect(
+//         'db', // Hostname (Docker service name)
+//         'myphp', // Username
+//         'mypassword', // Password
+//         'futgestion' // Database name
+//     );
     
-    $table_name = "user";
+//     $table_name = "user";
     
-    $query = "SELECT * FROM $table_name";
-    $response = mysqli_query($connect, $query);
+//     $query = "SELECT * FROM $table_name";
+//     $response = mysqli_query($connect, $query);
     
-} 
-catch(Exception $e) {
-    echo "Error: " . $e->getMessage();
-}
-?>
+// } 
+// catch(Exception $e) {
+//     echo "Error: " . $e->getMessage();
+// }
+?> -->
