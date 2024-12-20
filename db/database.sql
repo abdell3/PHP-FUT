@@ -1,4 +1,4 @@
-CREATE DATABASE mydb;
+CREATE DATABASE shiMatch;
 
 CREATE TABLE Club(
    id_club INT AUTO_INCREMENT,
@@ -15,8 +15,8 @@ INSERT INTO Club (nom, logo) VALUES
 ('Paris Saint-Germain', 'https://cdn.sofifa.net/meta/team/591/120.png');
 
 
-CREATE TABLE Nationality(
-   id_natio INT AUTO_INCREMENT,
+CREATE TABLE Nationalites(
+   id_nationalite INT AUTO_INCREMENT,
    nom VARCHAR(100),
    continent VARCHAR(100)
 );
@@ -28,31 +28,6 @@ INSERT INTO Nationality (nom, continent) VALUES
 ('Morocco', 'Afrique'),
 ('Italy', 'Europ');
 
--- CREATE TABLE Normal_player(
---    id_normal INT AUTO_INCREMENT,,
---    positio VARCHAR(50),
---    id_statN INT,
---    PRIMARY KEY(id_normal),
---    Foreign Key (id_statN) REFERENCES (id_statN)
-
--- );
--- INSERT INTO Normal_player (positio) VALUES
--- ('RW'),
--- ('ST'),
--- ('CM');
-
--- CREATE TABLE GK_player(
---    id_GK INT AUTO_INCREMENT,,
---    position VARCHAR(100),
---    id_statG INT,
---    PRIMARY KEY(id_GK),
---    Foreign Key (id_statG) REFERENCES StatiqG(id_statG)
-
--- );
--- INSERT INTO GK_player () VALUES
--- ('GK'),
--- ('GK'),
--- ('GK');
 
 CREATE TABLE StatiqG(
    id_statG INT AUTO_INCREMENT,
