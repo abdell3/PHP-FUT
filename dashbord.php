@@ -70,16 +70,15 @@
                     </thead>
                     <tbody>
                         <?php
-                        // Connexion à la base de données
+                        
                         include('connexion.php');
 
-                        // Récupérer les joueurs depuis la base de données
-                        $result = mysqli_query($conn, "SELECT * FROM Player");
-                        while ($row = mysqli_fetch_assoc($result)) {
+                        $result = mysqli_query(mysql: $conn, query: "SELECT * FROM Player");
+                        while ($row = mysqli_fetch_assoc(result: $result)) {
                             echo "<tr>";
                             echo "<td class='px-4 py-2 border-b'>{$row['nom']}</td>";
-                            echo "<td class='px-4 py-2 border-b'>{$row['id_club']}</td>"; // Affichage du club (à remplacer par le nom du club)
-                            echo "<td class='px-4 py-2 border-b'>{$row['id_natio']}</td>"; // Affichage de la nationalité (à remplacer par le nom de la nationalité)
+                            echo "<td class='px-4 py-2 border-b'>{$row['id_club']}</td>"; 
+                            echo "<td class='px-4 py-2 border-b'>{$row['id_natio']}</td>"; 
                             echo "<td class='px-4 py-2 border-b'>{$row['positio']}</td>";
                             echo "<td class='px-4 py-2 border-b'><img src='{$row['img']}' class='w-12 h-12 rounded-full'></td>";
                             echo "</tr>";
