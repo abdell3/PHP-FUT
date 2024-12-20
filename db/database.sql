@@ -19,6 +19,7 @@ CREATE TABLE Nationalites(
    id_nationalite INT AUTO_INCREMENT,
    nom VARCHAR(100),
    continent VARCHAR(100)
+   PRIMARY KEY(id_nationalite)
 );
 INSERT INTO Nationality (nom, continent) VALUES
 ('Argentina','Amerique-sud'),
@@ -29,53 +30,33 @@ INSERT INTO Nationality (nom, continent) VALUES
 ('Italy', 'Europ');
 
 
-CREATE TABLE StatiqG(
-   id_statG INT AUTO_INCREMENT,
-   rating INT,
-   diving INT, 
-   handling INT, 
-   kicking INT, 
-   reflexes INT, 
-   speed INT, 
-   positioning INT,
-   PRIMARY KEY(id_statG)
-);
-INSERT INTO StatiqG (rating, diving, handling, kicking, reflexes, speed, positioning) VALUES
-(91, 89, 90, 78, 92, 50, 88),
-(84, 81, 82, 77, 86, 38, 83),
-(89, 88, 84, 75, 90, 50, 85);
 
-CREATE TABLE StatiqN(
-   id_statN INT AUTO_INCREMENT,
-   rating INT, 
-   pace INT, 
-   shooting INT, 
-   passing INT, 
-   dribbling INT, 
-   defending INT, 
-   physical INT,
-   PRIMARY KEY(id_statN)
-);
 
-INSERT INTO StatiqN (rating, pace, shooting, passing, dribbling, defending, physical) VALUES
-(93, 85, 92, 91, 95, 35, 65),
-(91, 84, 94, 82, 87, 34, 77),
-(91, 74, 86, 93, 88, 64, 78);
 
 CREATE TABLE Player(
    id_player INT AUTO_INCREMENT,
    nom VARCHAR(100),
    img VARCHAR(100),
+   positions VARCHAR(100)
    id_club INT,
    id_natio INT,
-   id_statG INT,
-   id_statN INT,
+   rating CHECK(rating >=1 AND rating <100) INT,
+   diving CHECK(diving >=1 AND diving <100) INT, 
+   handling CHECK(handling >=1 AND handling <100) INT, 
+   kicking CHECK(kicking >=1 AND kicking <100) INT, 
+   reflexes CHECK(reflexes >=1 AND reflexes <100) INT, 
+   speed CHECK(speed >=1 AND speed <100) INT, 
+   positioning CHECK(positioning >=1 AND positioning <100) INT,
+   pace CHECK(pace >=1 AND pace <100) INT, 
+   shooting CHECK(shooting >=1 AND shooting <100) INT, 
+   passings CHECK(passings >=1 AND passings <100) INT, 
+   dribbling CHECK(dribbling >=1 AND dribbling <100) INT, 
+   defending CHECK(defending >=1 AND defending <100) INT, 
+   physical CHECK(physical >=1 AND physical <100) INT,
    PRIMARY KEY(id_player),
    FOREIGN KEY(id_club) REFERENCES Club(id_club),
-   FOREIGN KEY(id_natio) REFERENCES Nationality(id_natio),
-   FOREIGN KEY(id_statG) REFERENCES StatiqG(id_statG),
-   FOREIGN KEY(id_statN) REFERENCES StatiqN(id_statN)
-)
+   FOREIGN KEY(id_natio) REFERENCES Nationalites(id_nationalite)
+);
 
 INSERT INTO Player (nom, img, positio) VALUES
 ('Lionel Messi', 'https://cdn.sofifa.net/players/158/023/25_120.png', 'RW'),
@@ -84,3 +65,4 @@ INSERT INTO Player (nom, img, positio) VALUES
 ('Jan Oblak' 'https://cdn.sofifa.net/players/200/389/25_120.png', 'GK'),
 ('Yassine Bounou' 'https://cdn.sofifa.net/players/209/981/25_120.png', 'GK'),
 ('Gianluigi Donnarumma' 'https://cdn.sofifa.net/players/230/621/25_120.png', 'GK');
+
